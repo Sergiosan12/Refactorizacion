@@ -1,10 +1,17 @@
+package com.dam.refactor;
+
 public class Main {
     /**
-     * metodo para devolver la puntuacion de tenis
+     * @param pointsPlayer1 points of player 1
+     * @param pointsPlayer2 points of player 2
+     * @return the score of the game
      */
     public static String getScore(int pointsPlayer1, int pointsPlayer2) {
         String score = "";
 
+        /*
+        If the points of player 1 and player 2 are equal
+        */
         if (pointsPlayer1 == pointsPlayer2) {
             switch (pointsPlayer1)
             {
@@ -26,6 +33,9 @@ public class Main {
 
             }
         }
+        /*
+        If the points of player 1 and player 2 are more or equal to 4 and the difference between them is 1
+        */
         else if (pointsPlayer1 >=4 || pointsPlayer2 >=4)
         {
             int pointsDiff = pointsPlayer1-pointsPlayer2;
@@ -34,6 +44,9 @@ public class Main {
             else if (pointsDiff>=2) score = "Win for player1";
             else score ="Win for player2";
         }
+        /*
+        If the points of player 1 and player 2 are less than 4 and different
+        */
         else
         {
 
