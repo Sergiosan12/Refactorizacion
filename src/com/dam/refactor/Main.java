@@ -8,6 +8,7 @@ public class Main {
      */
     public static String getScore(int pointsPlayer1, int pointsPlayer2) {
         String score = "";
+        final int MAX_SCORE=4;
 
         /*
         If the points of player 1 and player 2 are equal
@@ -34,9 +35,9 @@ public class Main {
             }
         }
         /*
-        If the points of player 1 and player 2 are more or equal to 4 and the difference between them is 1
+        If the points of player 1 and player 2 are more or equal to 4
         */
-        else if (pointsPlayer1 >=4 || pointsPlayer2 >=4)
+        else if (pointsPlayer1 >=MAX_SCORE || pointsPlayer2 >=MAX_SCORE)
         {
             int pointsDiff = pointsPlayer1-pointsPlayer2;
             if (pointsDiff==1) score ="Advantage player1";
