@@ -17,11 +17,10 @@ public class Main {
      * @return the score of the game
      */
     public static String getScore(int pointsPlayer1, int pointsPlayer2) {
-        final int MAX_SCORE = 4;
 
-        if (pointsPlayer1 == pointsPlayer2) {
+        if (isEqual(pointsPlayer1, pointsPlayer2)) {
             return getScoreWhenEqual(pointsPlayer1);
-        } else if (pointsPlayer1 >= MAX_SCORE || pointsPlayer2 >= MAX_SCORE) {
+        } else if (isAdvantage(pointsPlayer1, pointsPlayer2)) {
             return getScoreWhenMoreThanMax(pointsPlayer1, pointsPlayer2);
         } else {
             return getScoreWhenLessThanMax(pointsPlayer1) + "-" + getScoreWhenLessThanMax(pointsPlayer2);
@@ -67,5 +66,14 @@ public class Main {
         } else {
             return INVALID_SCORE;
         }
+    }
+
+    private static boolean isEqual(int pointsPlayer1, int pointsPlayer2) {
+        return pointsPlayer1 == pointsPlayer2;
+    }
+
+    private static boolean isAdvantage(int pointsPlayer1, int pointsPlayer2) {
+        final int MAX_SCORE = 4;
+        return pointsPlayer1 >= MAX_SCORE || pointsPlayer2 >= MAX_SCORE;
     }
 }
